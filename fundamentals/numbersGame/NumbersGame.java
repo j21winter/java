@@ -2,9 +2,9 @@ import java.util.Random;
 public class NumbersGame {
     public static void main(String[] args){
 
-        boolean playAgain = true;
+        boolean playing = true;
 
-        while(playAgain){
+        while(playing){
 
             System.out.println("Hello, human. I am thinking of a number between 0 and 10.");
             System.out.println("*********************************************************");
@@ -12,16 +12,12 @@ public class NumbersGame {
             System.out.println("If you are not up to the task, you can always type 'q' to quit.");
 
             int answer = new Random().nextInt(11);
-            System.out.println(answer);
+            // System.out.println(answer);
 
             int count = 3;
             while(count > 0){
                 System.out.println("Guesses remaining: " + count);
                 String guess = System.console().readLine().trim();
-                if(count == 0){
-                    System.out.println("You have run out of guesses... ");
-                    break;
-                }
 
                 if(guess.equals("q")){
                     System.out.println("I knew you didn't have it in you.");
@@ -45,18 +41,28 @@ public class NumbersGame {
                 else{
                     System.out.println("Swing and a miss! Keep trying...");
                     count -= 1;
+                    if(Integer.parseInt(guess) > answer ){
+                        System.out.print("\nToo High!\n");
+                    }
+                    else if(Integer.parseInt(guess) < answer ){
+                        System.out.print("\nToo low!\n");
+                    }
                 }
 
-                System.out.println("Game over. Shutting down...");
+            if(count == 0){
+                System.out.println("You have run out of guesses... ");
+                System.out.printf("\nAnswer was %s\n", answer);
+            }
             }
 
             System.out.println("Play again? yes/no");
             String response = System.console().readLine().trim();
 
             if(response.toLowerCase().equals("yes")){
-                playAgain = true;
+                playing = true;
             } else {
-                playAgain = false;
+                System.out.println("Game over. Shutting down...");
+                playing = false;
             }
         }
     }
