@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Order{
-    String name;
-    ArrayList<Item> items = new ArrayList<Item>();
-    double total;
-    boolean ready = false;
+    public String name;
+    public ArrayList<Item> items = new ArrayList<Item>();
+    public double total;
+    public boolean ready = false;
 }

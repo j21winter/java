@@ -1,4 +1,4 @@
 public class Item {
-    String name;
-    Double price;
+    public String name;
+    public Double price;
 }
