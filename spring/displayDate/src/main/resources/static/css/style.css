@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.display{
+	text-align: center;
+	margin-top: 50px;
+	color: teal;
+}
+
+.container{
+	display: flex;
+	justify-content: space-around;
+}
+
+a{
+	font-size: 30px;
+	color: teal;
+}
