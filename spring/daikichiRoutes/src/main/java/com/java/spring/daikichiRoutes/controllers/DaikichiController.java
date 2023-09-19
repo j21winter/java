@@ -1,33 +1,34 @@
 package com.java.spring.daikichiRoutes.controllers;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 @RequestMapping("/daikichi")
 public class DaikichiController {
-	@RequestMapping("")
+	@GetMapping("")
 	public String welcome() {
 		return "Welcome";
 	}
 	
-	@RequestMapping("/today")
+	@GetMapping("/today")
 	public String today() {
 		return "Today you will find luck in all your endeavors! ";
 	}
 	
-	@RequestMapping("/tomorrow")
+	@GetMapping("/tomorrow")
 	public String tomorrow() {
 		return "Tomorrow, an opportunity will arise, so be sure to be open to new ideas! ";
 	}
 	
-	@RequestMapping("/travel/{location}")
+	@GetMapping("/travel/{location}")
 	public String travel(@PathVariable("location") String location) {
 		return "Congratulations. You will soon travel to " + location;
 	}
 	
-	@RequestMapping("/lotto/{number}")
+	@GetMapping("/lotto/{number}")
 	public String lotto(@PathVariable("number") String number) {
 		int numberInt = Integer.parseInt(number);
 		if(numberInt % 2 == 0) {
