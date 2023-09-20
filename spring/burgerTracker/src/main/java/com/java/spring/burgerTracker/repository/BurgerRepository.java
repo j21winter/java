@@ -10,5 +10,4 @@ public interface BurgerRepository extends CrudRepository<Burger, Long> {
 	
 	// This method searches all Burgers in our DB
 	List<Burger> findAll();
-	
 }
