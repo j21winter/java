@@ -22,7 +22,7 @@ public class BurgerController {
 	
 	// Instantiate service file for functionality
 	@Autowired
-	BurgerService burgerService;
+	private BurgerService burgerService;
 	
 	//Routes
 	

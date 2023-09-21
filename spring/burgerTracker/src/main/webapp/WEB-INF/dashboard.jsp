@@ -34,7 +34,6 @@
 							<td> <c:out value="${burger.burgerName }"/> </td>
 							<td> <c:out value="${burger.restaurantName }"/> </td>
 							<td> <c:out value="${burger.rating }"/> </td>
-							<!-- add form on the delete button. We are going to have a submit button with hidden inputs -->
 							<td class="d-flex"> 
 								<a class="btn btn-dark" href="/burger/show/${burger.id}">Edit Burger</a>
 								<form action="/burger/${burger.id}" method="post">

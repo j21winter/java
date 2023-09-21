@@ -46,7 +46,6 @@ public class Burger{
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private Date createdAt;
 	
-	@Column(updatable = false)
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 
