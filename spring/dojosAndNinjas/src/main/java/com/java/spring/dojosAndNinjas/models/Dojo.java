@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -38,7 +39,7 @@ public class Dojo {
 	@DateTimeFormat (pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 	
-	@OneToMany(mappedBy = "dojo", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "dojo", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Ninja> ninjas;
 	
 	@PrePersist

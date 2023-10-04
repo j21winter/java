@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import com.java.spring.burgerTracker.models.Burger;
 import com.java.spring.burgerTracker.services.BurgerService;
-import org.springframework.web.filter.HiddenHttpMethodFilter;
 
 
 import jakarta.validation.Valid;
