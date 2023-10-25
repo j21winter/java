@@ -163,7 +163,7 @@ public class UserController {
 	
 	@PutMapping("/books/{bookId}/update")
 	public String updateBook(
-			@PathVariable("bookId") Long id,
+			@PathVariable("bookId") Long bookId,
 			@Valid @ModelAttribute("book") Book book,
 			BindingResult result,
 			HttpSession session
@@ -172,6 +172,15 @@ public class UserController {
 		if(result.hasErrors()) {
 			return "editBook.jsp";
 		}
+		
+//		Book existingBook = bookService.findById("bookId");
+		Long userId = (Long)session.getAttribute("userId");
+		User user = userService.findById(userId);
+		
+		book.setId(bookId);
+		book.setUser(user);
+		
+		
 		
 		bookService.updateBook(book);
 		

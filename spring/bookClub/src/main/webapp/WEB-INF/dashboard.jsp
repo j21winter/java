@@ -72,7 +72,7 @@
 		    										<a href="/books/${book.id}/update" class="btn btn-info">Edit</a>
 		    										<form action="/books/${book.id}/delete" method="post">
 		    											<input type="hidden" name="_method" value="delete" />
-		    											<button type="submit" class="btn btn-warning">Submit</button>
+		    											<button type="submit" class="btn btn-warning">Delete</button>
 		    										</form>
 	    										</div>
 	    									</c:when>
